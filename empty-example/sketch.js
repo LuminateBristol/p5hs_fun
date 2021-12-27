@@ -8,22 +8,15 @@ n = 400;
 m = 100;
 a = 100;
 b = 5;
-c=1;
+c=5;
 d=1;
 
 function setup() {
   createCanvas(x_dim,y_dim);
-  slider_d = createSlider(1,100,1,10);
-  slider_d.position(10,10);
 }
 
 function draw() {
     background(0);
-    //ellipse(x_dim/2,y_dim/2,n*2,n*2);
-
-    //c = slider_d.value();
-    c=5;
-
     for (let theta=0; theta<2*PI; theta=theta+(2*PI)/m) {
         x_1_old=x_dim/2;
         y_1_old=y_dim/2;
