@@ -6,20 +6,14 @@ y_1_old=y_dim/2;
 var slider_d;
 n = 400;
 m = 100;
-a = 50;
-b = 50;
-e=1;
+e = 1;
 
 function setup() {
   createCanvas(x_dim,y_dim);
-  //slider_d = createSlider(1,100,1,10);
-  //slider_d.position(10,10);
 }
 
 function draw() {
     background(0);
-    //ellipse(x_dim/2,y_dim/2,n*2,n*2);
-    //d = slider_d.value();
     e=e+0.8;
 
     for (let theta=0; theta<2*PI; theta=theta+(2*PI)/m) {
@@ -36,7 +30,6 @@ function draw() {
             line(x_1_old,y_1_old,x_1,y_1);
             x_1_old=x_1;
             y_1_old = y_1;
-            //ellipse(x_1,y_1,circle_d,circle_d);
         }
 
 
