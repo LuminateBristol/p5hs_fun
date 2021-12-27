@@ -6,30 +6,33 @@ y_1_old=y_dim/2;
 var slider_d;
 n = 400;
 m = 100;
-a = 10;
-b = 20;
-
+a = 50;
+b = 50;
+e=1;
 
 function setup() {
   createCanvas(x_dim,y_dim);
-  //slider_d = createSlider(1,250,10,10);
+  //slider_d = createSlider(1,100,1,10);
   //slider_d.position(10,10);
 }
 
 function draw() {
-    background(255);
+    background(0);
     //ellipse(x_dim/2,y_dim/2,n*2,n*2);
-
-    //circle_d = slider_d.value();
-    b=b-0.1;
+    //d = slider_d.value();
+    e=e+0.8;
 
     for (let theta=0; theta<2*PI; theta=theta+(2*PI)/m) {
         x_1_old=x_dim/2;
         y_1_old=y_dim/2;
-        for (let x_0 = 0; x_0<n; x_0=x_0+1) {
-            y_0 = a*sin(x_0/b);
+        a=1*sin(theta-PI/2.7)*400+500;
+        b=3*cos(theta+PI/2.2)*80+350;
+        c=2*sin(theta+PI/5)*180+500;
+        for (let x_0 = 10; x_0<n; x_0=x_0+1) {
+            y_0 = e*(sin((2*PI*x_0)/a)+sin((2*PI*x_0)/b)+sin((2*PI*x_0)/c)+sin((2*PI*x_0)/c));
             x_1 = x_dim/2+x_0*cos(theta)+y_0*sin(theta);
             y_1 = y_dim/2-x_0*sin(theta)+y_0*cos(theta);
+            stroke(255);
             line(x_1_old,y_1_old,x_1,y_1);
             x_1_old=x_1;
             y_1_old = y_1;
